@@ -48,3 +48,12 @@ map(
   "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
   { noremap = true, silent = true, desc = "Comment" }
 )
+
+-- spell
+
+map("n", "<F11>", "[[<Cmd>set spell!<CR>]]", opts)
+
+-- ufo
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
